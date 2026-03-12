@@ -3,19 +3,13 @@ pipeline {
 
     stages {
 
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/RAHUL-KAR-Kalyani/jenkins-demo.git'
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
             }
         }
 
-        stage('Run Server Test') {
+        stage('Check Node Version') {
             steps {
                 sh 'node -v'
                 sh 'npm -v'
